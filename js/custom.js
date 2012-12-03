@@ -1,0 +1,46 @@
+function game() {
+
+	var padel_y_position = 15;
+	var paper = Raphael('draw');
+
+	var field = paper.rect(10, 10, 700, 700);
+	field.attr({
+		stroke: 'black',
+		fill: 'white',
+	});
+	
+	var padel = paper.rect(15, padel_y_position, 30, 100);
+	padel.attr({
+		fill: 'blue',
+		cursor: 'pointer',
+		opacity: 0.6,
+		stroke: 'steelblue',
+	});
+	
+	var ball = paper.circle(65, 70, 15);
+	ball.attr({
+		fill: 'grey',
+		opacity: 0.7,
+		stroke: 'none',
+	});
+	
+	var start = padel.click(function() {
+		if (padel_y_position >= 15 && padel_y_position <= 600){
+			padel_y_position += 15;
+		}
+		else {
+			padel_y_position = 600;
+		}
+		padel.animate({y: padel_y_position}, 1000, 'linear');	
+	});
+	
+	var pushup = ball.click(function(){
+		if (padel_y_position >= 15){
+			padel_y_position = padel_y_position - 15;
+		}
+		else {
+			padel_y_position = 15;
+		}
+		padel.animate({y: padel_y_position}, 1000, 'linear');
+	});
+};

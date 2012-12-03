@@ -1,0 +1,16 @@
+body {
+	background-color:#E0E0E0;
+	font-weight:bold;
+	font-family:Arial;
+	font-size:120%;
+	}
+.rosabox {
+	background-color:#FFDDDD;
+	padding:6px;
+	margin:0px;
+	}
+#draw {
+	background-color:#FFFA88;
+	width:720px;
+	height:720px;
+	}
