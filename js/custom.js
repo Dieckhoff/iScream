@@ -25,17 +25,14 @@ function game() {
 	});
 	
 	var start = padel.click(function() {
-		if (padel_y_position >= 15 && padel_y_position <= 600){
-			padel_y_position += 15;
-		}
-		else {
-			padel_y_position = 600;
-		}
-		padel.animate({y: padel_y_position}, 1000, 'linear');	
+		padel.animate({y: 600}, 10000, 'linear');
 	});
 	
 	var pushup = ball.click(function(){
+		padel.stop(start);
+		//alert(padel.status(start));
 		if (padel_y_position >= 15){
+		alert(padel_y_position);
 			padel_y_position = padel_y_position - 15;
 		}
 		else {
@@ -43,4 +40,5 @@ function game() {
 		}
 		padel.animate({y: padel_y_position}, 1000, 'linear');
 	});
+	padel.resume(start);
 };
