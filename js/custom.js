@@ -1,6 +1,6 @@
 function game() {
 	up = 0;
-	setInterval(onTimerTick, 33); // 33 milliseconds = ~ 30 frames per sec
+	setInterval(onTimerTick, 33); // 33 milliseconds = ~ 30 frames per sec --> game loop
 	
 	var padel_y_position = 15;
 	var paper = Raphael('draw');
@@ -31,7 +31,12 @@ function game() {
 		up = 1;
 	});
 	
+	var ball_move = function(){
+		//TODO
+	};
+	
 	function onTimerTick() {
+	//GAME LOOP
 		if ((up == 0) && (padel_y_position <= 620)){
 			padel_y_position += 1;			
 		}
